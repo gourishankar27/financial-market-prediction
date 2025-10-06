@@ -25,7 +25,7 @@ Make sure you have Python 3.8+ and pip installed.
 
 1.  Clone the repo
     ```sh
-    git clone []()
+    git clone [https://github.com/gourishankar27/financial-market-prediction.git](https://github.com/gourishankar27/financial-market-prediction.git)
     ```
 2.  Navigate to the project directory
     ```sh
