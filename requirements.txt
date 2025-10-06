@@ -1,1 +1,36 @@
-torch
+# Data manipulation & core analytics
+pandas>=2.0
+numpy>=1.24
+
+# Visualization
+matplotlib>=3.8
+seaborn>=0.12
+
+# Machine learning & deep learning
+scikit-learn>=1.4
+
+# PyTorch (deep learning backend)
+torch>=2.1
+torchvision>=0.16
+torchaudio>=2.1
+
+# Finance-specific data and features
+yfinance>=0.2        # Yahoo Finance downloader (market data)
+pandas_market_calendars>=4.4
+ta>=0.11             # Technical Analysis Indicators (optional, for auto-features)
+
+# DRL & Gym (if using DRL scripts)
+gymnasium>=0.27
+gym[box2d]>=0.26      # For advanced RL environments
+stable-baselines3>=2.1
+
+# Saved model/feature scaler loading
+joblib>=1.3
+
+
+# Misc utilities & warnings
+tqdm>=4.66
+packaging>=23.0
+
+# For working with market holidays
+holidays>=0.28
