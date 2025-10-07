@@ -21,7 +21,6 @@ ta>=0.11             # Technical Analysis Indicators (optional, for auto-feature
 
 # DRL & Gym (if using DRL scripts)
 gymnasium>=0.27
-gym[box2d]>=0.26      # For advanced RL environments
 stable-baselines3>=2.1
 
 # Saved model/feature scaler loading
