@@ -1,0 +1,31 @@
+{
+  "created_at": "2025-10-22T22:17:40.183527",
+  "feature_set": "core_proposal",
+  "frequency": "monthly",
+  "train_pct": 0.7,
+  "val_pct": 0.15,
+  "test_pct": 0.15000000000000005,
+  "train_size": 292,
+  "val_size": 63,
+  "test_size": 63,
+  "train_dates": {
+    "start": "1991-01-31 00:00:00",
+    "end": "2015-04-30 00:00:00"
+  },
+  "val_dates": {
+    "start": "2015-05-31 00:00:00",
+    "end": "2020-07-31 00:00:00"
+  },
+  "test_dates": {
+    "start": "2020-08-31 00:00:00",
+    "end": "2025-10-31 00:00:00"
+  },
+  "features": [
+    "SP500_Returns",
+    "VIX",
+    "Treasury_10Y",
+    "Yield_Spread",
+    "Inflation_YoY",
+    "CPI"
+  ]
+}

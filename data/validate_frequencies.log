@@ -1,0 +1,152 @@
+======================================================================
+MULTI-FREQUENCY DATA VALIDATION
+======================================================================
+Data directory: data/
+Version: vintage
+Mode: Enhanced dataset analysis (daily only)
+✓ Loaded daily: (6206, 64)
+✓ Loaded weekly: (1298, 64)
+✓ Loaded monthly: (297, 64)
+
+======================================================================
+BASIC INTEGRITY
+======================================================================
+
+DAILY:
+  Shape: (6206, 64)
+  Date range: 2000-11-27 to 2025-10-06
+  Missing values: 0
+  ✓ No duplicate dates
+  ✓ Dates monotonically increasing
+
+WEEKLY:
+  Shape: (1298, 64)
+  Date range: 2000-12-01 to 2025-10-10
+  Missing values: 0
+  ✓ No duplicate dates
+  ✓ Dates monotonically increasing
+
+MONTHLY:
+  Shape: (297, 64)
+  Date range: 2001-02-28 to 2025-10-31
+  Missing values: 0
+  ✓ No duplicate dates
+  ✓ Dates monotonically increasing
+
+======================================================================
+RETURN CHARACTERISTICS
+======================================================================
+
+Frequency    N  Mean (%)  Std (%)    Min (%)   Max (%)      Skew  Kurtosis
+    daily 6206  0.031444 1.209576 -11.984055 10.789006 -0.265068 10.063133
+   weekly 1298  0.154393 2.435616 -18.195465 12.101749 -0.600287  6.245747
+  monthly  297  0.635221 4.368496 -16.942452 12.684404 -0.556518  0.934498
+
+======================================================================
+SIGNAL-TO-NOISE ANALYSIS
+======================================================================
+
+Frequency  Mean/Period (%)  Std/Period (%)  SNR (raw)  Ann. Mean (%)  Ann. Std (%)  SNR (ann.) Noise:Signal
+    daily         0.031444        1.209576   0.025996       7.923832     19.201428    0.412669       38.5:1
+   weekly         0.154393        2.435616   0.063390       8.028419     17.563474    0.457109       15.8:1
+  monthly         0.635221        4.368496   0.145409       7.622646     15.132914    0.503713        6.9:1
+
+----------------------------------------------------------------------
+Interpretation:
+----------------------------------------------------------------------
+  SNR (raw): Higher = easier prediction target (for that period length)
+  SNR (ann.): Normalized for comparison across frequencies
+  Noise:Signal: How many units of noise per unit of signal
+                Daily ~30:1 means noise is 30x larger than expected return
+
+======================================================================
+FEATURE CORRELATION WITH TARGET
+======================================================================
+
+Common features: ['CPI', 'CPI_YoY', 'CPI_acceleration', 'Consumer_Sentiment', 'Fed_Rate', 'Gold_Momentum_Strength', 'Gold_Price', 'Gold_Real_Rate_Signal', 'Gold_Returns', 'Gold_SPX_Ratio', 'Gold_SPX_Ratio_Norm', 'Gold_Safe_Haven', 'Gold_Trend_Direction', 'Gold_Trend_Strength', 'Gold_Vol_Regime', 'Industrial_Production', 'Inflation_YoY', 'RSI', 'RSI_overbought', 'RSI_oversold', 'Real_Interest_Rate', 'SP500_Close', 'SP500_Volatility', 'SP500_Volume', 'Stock_Bond_Corr', 'Treasury_10Y', 'Treasury_10Y_MA', 'Treasury_10Y_change', 'Treasury_Rising', 'Unemployment', 'Unemployment_Rising', 'Unemployment_change', 'VIX', 'VIX_lag_1', 'VIX_relative', 'VIX_spike', 'Wilshire5000', 'Yield_Curve_Inversion', 'Yield_Spread', 'Yield_Spread_MA', 'Yield_Spread_relative']
+
+               Feature     daily    weekly   monthly
+                   CPI  0.017415  0.042043  0.104074
+               CPI_YoY -0.026700 -0.063847 -0.155078
+      CPI_acceleration  0.005547 -0.012539 -0.073834
+    Consumer_Sentiment -0.010845 -0.037659 -0.009909
+              Fed_Rate -0.005879 -0.016255 -0.039778
+Gold_Momentum_Strength  0.007381 -0.041743 -0.031160
+            Gold_Price  0.021505  0.055269  0.128846
+ Gold_Real_Rate_Signal -0.014124 -0.030712 -0.069752
+          Gold_Returns -0.004910  0.052464  0.058381
+        Gold_SPX_Ratio -0.008644 -0.005944  0.004106
+   Gold_SPX_Ratio_Norm -0.177427 -0.340080 -0.463587
+       Gold_Safe_Haven -0.453663 -0.478573 -0.548487
+  Gold_Trend_Direction -0.008706 -0.017332  0.030441
+   Gold_Trend_Strength -0.008614  0.004085  0.041993
+       Gold_Vol_Regime  0.021456  0.007210  0.005536
+ Industrial_Production -0.030700 -0.073646 -0.190687
+         Inflation_YoY -0.026700 -0.059331 -0.155334
+                   RSI -0.027811 -0.021225  0.020444
+        RSI_overbought -0.021953 -0.032718  0.015232
+          RSI_oversold  0.052128  0.014283 -0.068699
+    Real_Interest_Rate  0.016640  0.034221  0.067384
+           SP500_Close  0.024711  0.054922  0.125130
+      SP500_Volatility  0.000621 -0.004380 -0.193295
+          SP500_Volume -0.025103 -0.046234 -0.034705
+       Stock_Bond_Corr  0.000797 -0.042595  0.002991
+          Treasury_10Y -0.013214 -0.036285 -0.091536
+       Treasury_10Y_MA -0.024079 -0.059535 -0.133094
+   Treasury_10Y_change  0.302537  0.272522  0.175936
+       Treasury_Rising  0.218732  0.235005  0.075299
+          Unemployment  0.016703  0.042999  0.096544
+   Unemployment_Rising  0.008890 -0.009951  0.021587
+   Unemployment_change  0.013889  0.003165  0.023490
+                   VIX -0.141817 -0.151468 -0.305717
+             VIX_lag_1  0.030130  0.041068  0.042276
+          VIX_relative -0.424528 -0.430200 -0.492782
+             VIX_spike -0.206136 -0.239547 -0.342950
+          Wilshire5000  0.025485  0.056941  0.130901
+ Yield_Curve_Inversion  0.009451  0.019374  0.077347
+          Yield_Spread -0.002242 -0.005150 -0.029685
+       Yield_Spread_MA -0.003364 -0.005857 -0.018469
+ Yield_Spread_relative  0.011506 -0.004497 -0.027956
+
+----------------------------------------------------------------------
+Correlation Stability Check:
+----------------------------------------------------------------------
+  ⚠ CPI_acceleration: Sign flip across frequencies
+  ⚠ Gold_Momentum_Strength: Sign flip across frequencies
+  ⚠ Gold_Returns: Sign flip across frequencies
+  ⚠ Gold_SPX_Ratio: Sign flip across frequencies
+  ⚠ Gold_Trend_Direction: Sign flip across frequencies
+  ⚠ Gold_Trend_Strength: Sign flip across frequencies
+  ⚠ RSI: Sign flip across frequencies
+  ⚠ RSI_overbought: Sign flip across frequencies
+  ⚠ RSI_oversold: Sign flip across frequencies
+  ⚠ SP500_Volatility: Sign flip across frequencies
+  ⚠ Stock_Bond_Corr: Sign flip across frequencies
+  ⚠ Unemployment_Rising: Sign flip across frequencies
+  ⚠ Yield_Spread_relative: Sign flip across frequencies
+
+======================================================================
+TEMPORAL COVERAGE
+======================================================================
+
+DAILY:
+  First date: 2000-11-27 00:00:00
+  Last date:  2025-10-06 00:00:00
+  Total periods: 6206
+  Coverage: 99.1% of expected periods
+
+WEEKLY:
+  First date: 2000-12-01 00:00:00
+  Last date:  2025-10-10 00:00:00
+  Total periods: 1298
+  Coverage: 100.4% of expected periods
+
+MONTHLY:
+  First date: 2001-02-28 00:00:00
+  Last date:  2025-10-31 00:00:00
+  Total periods: 297
+  Coverage: 100.3% of expected periods
+
+======================================================================
+VALIDATION COMPLETE
+======================================================================

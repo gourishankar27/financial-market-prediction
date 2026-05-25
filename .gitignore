@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+.ipynb_checkpoints/
+notebooks/**/.ipynb_checkpoints/
+.pytest_cache
+
+# don't need this
+analysis/notebooks/
+/notebooks
+/docs
+
+# Package install artifacts
+*.egg-info/
+dist/
+build/
+
+# clones
+/darts
+/pytorch-forecasting
+
+# Experiment artifacts
+experiments/**/checkpoints/
+experiments/**/version_*/events.out.tfevents.*
+experiments/**/collapse_monitoring/*.npy
+experiments/*/version_*/metrics.csv
+experiments/*/terminal.log
+*.whl
+
+# Collapse monitoring - only track latest
+experiments/**/collapse_monitoring/collapse_monitor_epoch*.json
+!experiments/**/collapse_monitoring/collapse_monitor_latest.json
+
+# Keep configs and metrics
+!experiments/*/config.json
+!experiments/*/final_metrics.json
+!experiments/*/version_*/hparams.yaml
+
+# Virtual environment
+venv/
+env/
+
+# runtime artifacts
+nohup.out
+logs/
+
+# macOS
+.DS_Store
+
+# Keep structure but ignore large files
+!experiments/.gitkeep
+!data/splits/.gitkeep
+
+# old
+archive/
+data/archive
+data/splits/archive/
+train/archive/
+experiments/archive
+results/attention_analysis/archive
+

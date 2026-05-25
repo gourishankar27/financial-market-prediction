@@ -1,0 +1,66 @@
+2025-11-29 17:54:10 | INFO     | ======================================================================
+2025-11-29 17:54:10 | INFO     | S&P 500 CONSTITUENT COLLECTION
+2025-11-29 17:54:10 | INFO     | ======================================================================
+2025-11-29 17:54:10 | INFO     | Start date: 1990-01-01
+2025-11-29 17:54:10 | INFO     | End date: 2025-10-06
+2025-11-29 17:54:10 | INFO     | Top N constituents: 50
+2025-11-29 17:54:10 | INFO     | Min coverage: 95%
+2025-11-29 17:54:10 | INFO     | Output directory: data
+2025-11-29 17:54:10 | INFO     | Version: vintage
+2025-11-29 17:54:10 | INFO     | 
+2025-11-29 17:54:10 | INFO     | ======================================================================
+2025-11-29 17:54:10 | INFO     | Collecting S&P 500 Constituent Returns
+2025-11-29 17:54:10 | INFO     | ======================================================================
+2025-11-29 17:54:10 | INFO     | Tickers requested: 50
+2025-11-29 17:54:10 | INFO     | Date range: 1990-01-01 to 2025-10-06
+2025-11-29 17:54:10 | INFO     | Minimum coverage threshold: 95%
+2025-11-29 17:54:10 | INFO     | Downloading data (this may take 30-60 seconds)...
+2025-11-29 17:54:10 | INFO     | Failed to create TzCache, reason: Error creating TzCache folder: '/home/samu/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/samu/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+2025-11-29 17:54:16 | INFO     | Downloaded data for 50 tickers
+2025-11-29 17:54:16 | INFO     | Date range in data: 1990-01-02 00:00:00 to 2025-10-06 00:00:00
+2025-11-29 17:54:16 | INFO     | 
+2025-11-29 17:54:16 | INFO     | Screening tickers for data coverage...
+2025-11-29 17:54:16 | INFO     | ----------------------------------------------------------------------
+2025-11-29 17:54:16 | WARNING  | ✗ META: 37.4% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ AVGO: 45.2% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ ABBV: 35.6% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ PM: 49.1% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ BRK-B: 82.2% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ NFLX: 65.3% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ CRM: 59.5% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ GOOG: 59.0% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ LIN: 93.1% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ V: 49.0% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ GOOGL: 59.0% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ NVDA: 74.6% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ AMZN: 79.3% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ ACN: 67.6% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ INTU: 91.0% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ QCOM: 94.5% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ TSLA: 42.7% coverage (EXCLUDED)
+2025-11-29 17:54:16 | WARNING  | ✗ MA: 54.1% coverage (EXCLUDED)
+2025-11-29 17:54:16 | INFO     | ----------------------------------------------------------------------
+2025-11-29 17:54:16 | INFO     | Screening results:
+2025-11-29 17:54:16 | INFO     |   Passed: 32 tickers
+2025-11-29 17:54:16 | INFO     |   Failed: 18 tickers
+2025-11-29 17:54:16 | INFO     | 
+2025-11-29 17:54:16 | INFO     | Calculating daily returns...
+2025-11-29 17:54:17 | INFO     | 
+2025-11-29 17:54:17 | INFO     | ======================================================================
+2025-11-29 17:54:17 | INFO     | Constituent Returns Summary
+2025-11-29 17:54:17 | INFO     | ======================================================================
+2025-11-29 17:54:17 | INFO     | Tickers included: 32
+2025-11-29 17:54:17 | INFO     | Date range: 1990-01-03 00:00:00 to 2025-10-06 00:00:00
+2025-11-29 17:54:17 | INFO     | Observations: 9006
+2025-11-29 17:54:17 | INFO     | Cross-sectional mean daily return: 0.0640%
+2025-11-29 17:54:17 | INFO     | Cross-sectional mean daily volatility: 1.57%
+2025-11-29 17:54:17 | INFO     | Saved to: data/constituents_daily_vintage.csv
+2025-11-29 17:54:17 | INFO     | Saved metadata to: data/constituents_metadata_vintage.json
+2025-11-29 17:54:17 | INFO     | 
+2025-11-29 17:54:17 | INFO     | ======================================================================
+2025-11-29 17:54:17 | INFO     | COLLECTION COMPLETE
+2025-11-29 17:54:17 | INFO     | ======================================================================
+2025-11-29 17:54:17 | INFO     | Output: data/constituents_daily_vintage.csv
+2025-11-29 17:54:17 | INFO     | Tickers: 32/50
+2025-11-29 17:54:17 | INFO     | Observations: 9006
+2025-11-29 17:54:17 | INFO     | 

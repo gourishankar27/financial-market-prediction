@@ -1,0 +1,217 @@
+==============================================
+OVERNIGHT SWEEP - Phase 10
+==============================================
+
+Configuration:
+  Frequencies: weekly, daily
+  Quantiles: 3q, 7q
+  Horizons: h1, h3, h5
+  Seeds: 42 123 456
+
+Total experiments: 36
+Estimated runtime: 15-18 hours
+
+Results will be in: experiments/10_overnight_sweep/
+Progress log: experiments/10_overnight_sweep/sweep_progress.log
+==============================================
+
+[2025-12-04 00:58:50] Sweep started
+[2025-12-04 00:58:50] Total experiments: 36
+[2025-12-04 00:58:50] === Starting weekly experiments ===
+[2025-12-04 00:58:50] Starting: weekly_3q_h1_s42 (1/36)
+
+[INFO] Using AUTO device selection.
+
+[INFO] Patched matplotlib.Axes.errorbar to abs() negative yerr for robustness.
+======================================================================
+Training TFT: 10_overnight_sweep/weekly_3q_h1_s42
+======================================================================
+Logging to: experiments/10_overnight_sweep/weekly_3q_h1_s42/training_20251204_005852.log
+Started at: 2025-12-04 00:58:52
+======================================================================
+Configuration saved to: experiments/10_overnight_sweep/weekly_3q_h1_s42/config.json
+
+Loading data splits...
+Train: 1269 samples
+Val: 272 samples
+Test: 273 samples
+
+Preparing TimeSeriesDataSet...
+
+Dropping source columns (used for staleness only): ['CPI']
+
+Final features for TFT: ['SP500_Returns', 'VIX', 'Treasury_10Y', 'Yield_Spread', 'Inflation_YoY']
+
+======================================================================
+FEATURE STATISTICS - BEFORE NORMALIZATION
+======================================================================
+VIX                             mean= 19.7566  std=  7.9591  min=  9.9050  max= 72.9160
+Treasury_10Y                    mean=  4.7641  std=  1.6888  min=  1.4700  max=  8.3400
+Yield_Spread                    mean=  1.2798  std=  0.9180  min= -0.5200  max=  2.9100
+Inflation_YoY                   mean=  2.5388  std=  1.1868  min= -2.1498  max=  6.7300
+
+======================================================================
+FEATURES AFTER GROUPNORMALIZER (first batch, last timestep)
+======================================================================
+VIX                             normalized_value=  1.0000
+Treasury_10Y                    normalized_value= -0.0833
+Yield_Spread                    normalized_value=  1.9632
+Inflation_YoY                   normalized_value= -0.0972
+======================================================================
+
+[DEBUG] VIX train values: [31.318 31.68  23.47  21.908 22.596]
+[DEBUG] VIX val values: [14.06  13.318 12.54  13.62  14.158]
+Batches per epoch: 78
+[DEBUG] Validation batches: 17
+[DEBUG] Validation dataset size: 260
+[DEBUG] Batch size: 16
+
+Initializing model...
+
+Quantile configuration: 3q
+  Quantiles: [0.1, 0.5, 0.9]
+  Output size: 3
+  Median index: 1
+
+Using standard QuantileLoss (no penalties)
+
+[REGIME OUTPUT] Disabled (using baseline output layer)
+
+================================================================================
+BASELINE MODEL FEATURE CONFIGURATION (after from_dataset)
+================================================================================
+tft.hparams.time_varying_reals_encoder: ['relative_time_idx', 'VIX', 'Treasury_10Y', 'Yield_Spread', 'Inflation_YoY']
+  Count: 5
+
+tft.hparams.time_varying_reals_decoder: ['relative_time_idx']
+  Count: 1
+
+tft.hparams.x_reals (all reals passed to model): ['encoder_length', 'relative_time_idx', 'VIX', 'Treasury_10Y', 'Yield_Spread', 'Inflation_YoY']
+  Count: 6
+
+Encoder VSN configuration:
+  num_inputs: 5
+  input_sizes: {'relative_time_idx': 16, 'VIX': 16, 'Treasury_10Y': 16, 'Yield_Spread': 16, 'Inflation_YoY': 16}
+  flattened_grn.fc1: in_features=80, out_features=5
+  -> Params in fc1: 400 (should be 5*16*5=400 if 5 features)
+================================================================================
+
+Model parameters: 22,547
+
+Starting training...
+Checkpoints will be saved to: experiments/10_overnight_sweep/weekly_3q_h1_s42/checkpoints/
+Logs will be saved to: experiments/10_overnight_sweep/weekly_3q_h1_s42/logs/
+
+[DEBUG CollapseMonitor] on_validation_epoch_start called for epoch 0
+[DEBUG CollapseMonitor] reset_temporal_state() called on loss function
+Epoch 0: val_loss=N/A
+[DEBUG CollapseMonitor] on_validation_epoch_start called for epoch 0
+[DEBUG CollapseMonitor] reset_temporal_state() called on loss function
+Epoch 0: val_loss=1.1726622581481934
+Epoch 0: train_loss=1.2009150981903076
+
+[CollapseMonitor] Epoch 0
+  [DEBUG] Processed 17 batches from val_dataloader
+  [DEBUG] Predictions shape after concat: (260,)
+  Pred std: 0.047756, range: 0.216568, mean: -0.475653
+  Pos: 0.0%, Neg: 100.0%, Unique: 260
+  Dir Acc: 39.23%, Pred Sharpe: -158.1120
+  Composite: 0.2731 (dist_match: 0.3923, actual_pos: 60.8%, pred_pos: 0.0%)
+  Collapse penalty: 0.000000 (threshold: 0.005000)
+  Saved validation predictions to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/val_predictions_epoch0.npy
+  Gradient norms:
+    lstm_encoder: 0.031046
+    lstm_decoder: 0.032406
+    output_layer: 0.973755
+  VSN output std:
+    encoder: 0.163784
+  Attention entropy: 2.478161
+  Saved to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/collapse_monitor_latest.json
+[DEBUG CollapseMonitor] on_validation_epoch_start called for epoch 1
+[DEBUG CollapseMonitor] reset_temporal_state() called on loss function
+Epoch 1: val_loss=1.1065484285354614
+Epoch 1: train_loss=1.1164014339447021
+
+[CollapseMonitor] Epoch 1
+  [DEBUG] Processed 17 batches from val_dataloader
+  [DEBUG] Predictions shape after concat: (260,)
+  Pred std: 0.028464, range: 0.147264, mean: 0.199198
+  Pos: 100.0%, Neg: 0.0%, Unique: 258
+  Dir Acc: 60.77%, Pred Sharpe: 111.0930
+  Composite: 0.4885 (dist_match: 0.6077, actual_pos: 60.8%, pred_pos: 100.0%)
+  Collapse penalty: 0.000000 (threshold: 0.005000)
+  Saved validation predictions to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/val_predictions_epoch1.npy
+  Gradient norms:
+    lstm_encoder: 0.024017
+    lstm_decoder: 0.023031
+    output_layer: 0.694880
+  VSN output std:
+    encoder: 0.163348
+  Attention entropy: 2.477303
+  Saved to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/collapse_monitor_latest.json
+[DEBUG CollapseMonitor] on_validation_epoch_start called for epoch 2
+[DEBUG CollapseMonitor] reset_temporal_state() called on loss function
+Epoch 2: val_loss=1.1025630235671997
+Epoch 2: train_loss=1.091255784034729
+
+[CollapseMonitor] Epoch 2
+  [DEBUG] Processed 17 batches from val_dataloader
+  [DEBUG] Predictions shape after concat: (260,)
+  Pred std: 0.027184, range: 0.114636, mean: 0.327879
+  Pos: 100.0%, Neg: 0.0%, Unique: 259
+  Dir Acc: 60.77%, Pred Sharpe: 191.4710
+  Composite: 0.4885 (dist_match: 0.6077, actual_pos: 60.8%, pred_pos: 100.0%)
+  Collapse penalty: 0.000000 (threshold: 0.005000)
+  Saved validation predictions to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/val_predictions_epoch2.npy
+  Gradient norms:
+    lstm_encoder: 0.021874
+    lstm_decoder: 0.020038
+    output_layer: 0.610313
+  VSN output std:
+    encoder: 0.159271
+  Attention entropy: 2.477424
+  Saved to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/collapse_monitor_latest.json
+[DEBUG CollapseMonitor] on_validation_epoch_start called for epoch 3
+[DEBUG CollapseMonitor] reset_temporal_state() called on loss function
+Epoch 3: val_loss=1.1014611721038818
+Epoch 3: train_loss=1.0992770195007324
+
+[CollapseMonitor] Epoch 3
+  [DEBUG] Processed 17 batches from val_dataloader
+  [DEBUG] Predictions shape after concat: (260,)
+  Pred std: 0.034991, range: 0.120039, mean: 0.339347
+  Pos: 100.0%, Neg: 0.0%, Unique: 260
+  Dir Acc: 60.77%, Pred Sharpe: 153.9548
+  Composite: 0.4885 (dist_match: 0.6077, actual_pos: 60.8%, pred_pos: 100.0%)
+  Collapse penalty: 0.000000 (threshold: 0.005000)
+  Saved validation predictions to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/val_predictions_epoch3.npy
+  Gradient norms:
+    lstm_encoder: 0.020836
+    lstm_decoder: 0.019307
+    output_layer: 0.597642
+  VSN output std:
+    encoder: 0.157729
+  Attention entropy: 2.476382
+  Saved to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/collapse_monitor_latest.json
+[DEBUG CollapseMonitor] on_validation_epoch_start called for epoch 4
+[DEBUG CollapseMonitor] reset_temporal_state() called on loss function
+Epoch 4: val_loss=1.1019023656845093
+Epoch 4: train_loss=1.105062484741211
+
+[CollapseMonitor] Epoch 4
+  [DEBUG] Processed 17 batches from val_dataloader
+  [DEBUG] Predictions shape after concat: (260,)
+  Pred std: 0.044294, range: 0.156291, mean: 0.249852
+  Pos: 100.0%, Neg: 0.0%, Unique: 260
+  Dir Acc: 60.77%, Pred Sharpe: 89.5437
+  Composite: 0.4885 (dist_match: 0.6077, actual_pos: 60.8%, pred_pos: 100.0%)
+  Collapse penalty: 0.000000 (threshold: 0.005000)
+  Saved validation predictions to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/val_predictions_epoch4.npy
+  Gradient norms:
+    lstm_encoder: 0.021957
+    lstm_decoder: 0.019845
+    output_layer: 0.590662
+  VSN output std:
+    encoder: 0.156934
+  Attention entropy: 2.474467
+  Saved to: experiments/10_overnight_sweep/weekly_3q_h1_s42/collapse_monitoring/collapse_monitor_latest.json

@@ -1,0 +1,112 @@
+======================================================================
+ATTENTION PATTERN ANALYSIS REPORT
+======================================================================
+
+SUMMARY STATISTICS
+----------------------------------------------------------------------
+Total experiments analyzed: 54
+Period types: {'yearly': 54}
+
+Entropy statistics:
+  Mean: 2.5455
+  Std:  0.3479
+  Min:  1.9359
+  Max:  2.9917
+
+Concentration statistics:
+  Mean: 0.0802
+  Std:  0.0303
+
+ATTENTION SHIFT DETECTION (MULTI-SIGNAL)
+----------------------------------------------------------------------
+Shift Detection Signals:
+  - Cosine similarity < 0.960 (direction change)
+  - L2 distance > 0.025 (magnitude change)
+  - Entropy change > ±0.050 (focus change)
+  - Top timestep shift > 5 positions (strategy change)
+
+Experiments with detected shifts: 48
+Total shifts detected: 188
+
+Signal Firing Statistics:
+  Cosine: 19 (10.1%)
+  L2: 119 (63.3%)
+  Entropy: 136 (72.3%)
+  Top Timestep: 49 (26.1%)
+
+High-confidence shifts (2+ signals): 103
+Very strong shifts (3+ signals): 32
+
+Most common shift transitions:
+  2022 → 2023: 46 experiments (primary: l2, entropy)
+  2021 → 2022: 41 experiments (primary: l2, entropy)
+  2020 → 2021: 37 experiments (primary: l2, entropy)
+  2024 → 2025: 36 experiments (primary: entropy)
+  2023 → 2024: 28 experiments (primary: l2, top_timestep)
+
+Notable Shifts (3+ signals fired):
+  02b_vintage_sweep/baseline_h20_drop0.30 (2022→2023): cosine, l2, entropy
+  02b_vintage_sweep/baseline_h12_drop0.20 (2020→2021): cosine, l2, entropy
+  06a_weekly_sweep/h16_enc12_d030_bs16 (2020→2021): l2, entropy, top_timestep(Δ8)
+  06a_weekly_sweep/h8_enc12_d030_bs16 (2022→2023): l2, entropy, top_timestep(Δ7)
+  06a_weekly_sweep/h16_enc8_d015_bs32 (2022→2023): l2, entropy, top_timestep(Δ7)
+  06a_weekly_sweep/h8_enc12_d015_bs32 (2021→2022): l2, entropy, top_timestep(Δ8)
+  06a_weekly_sweep/h16_enc12_d015_bs16 (2024→2025): l2, entropy, top_timestep(Δ9)
+  06a_weekly_sweep/h16_enc12_d015_bs16 (2020→2021): cosine, l2, entropy
+  06a_weekly_sweep/h16_enc12_d015_bs32 (2022→2023): l2, entropy, top_timestep(Δ11)
+  06a_weekly_sweep/h16_enc12_d025_bs32 (2022→2023): l2, entropy, top_timestep(Δ11)
+  06a_weekly_sweep/h16_enc12_d030_bs32 (2022→2023): l2, entropy, top_timestep(Δ11)
+  06a_weekly_sweep/h8_enc12_d015_bs16 (2021→2022): l2, entropy, top_timestep(Δ8)
+  02b_vintage_sweep/baseline_h20_drop0.20 (2022→2023): cosine, l2, entropy
+  02b_vintage_sweep/baseline_h20_drop0.20 (2021→2022): cosine, l2, entropy
+  02b_vintage_sweep/baseline_h14_drop0.15 (2022→2023): l2, entropy, top_timestep(Δ13)
+
+Experiments with most shifts:
+  02b_vintage_sweep/baseline_h20_drop0.20: 5 shifts
+  02b_vintage_sweep/baseline_h18_drop0.30: 5 shifts
+  06a_weekly_sweep/h16_enc8_d030_bs32: 5 shifts
+  02b_vintage_sweep/baseline_h14_drop0.15: 5 shifts
+  02b_vintage_sweep/baseline_h20_drop0.10: 5 shifts
+  06a_weekly_sweep/h16_enc12_d030_bs32: 5 shifts
+  06a_weekly_sweep/h16_enc12_d025_bs32: 5 shifts
+  02b_vintage_sweep/baseline_h20_drop0.15: 5 shifts
+  02b_vintage_sweep/baseline_h14_drop0.20: 5 shifts
+  02b_vintage_sweep/baseline_h20_drop0.25: 5 shifts
+
+ATTENTION-COLLAPSE CORRELATIONS
+----------------------------------------------------------------------
+Entropy vs Has Any Collapse: -0.207
+Entropy vs Has Strong Collapse: -0.197
+Entropy vs Has Degradation: -0.025
+Entropy vs Problematic %: -0.030
+Entropy vs Healthy %: 0.030
+Entropy vs Weak Collapse %: 0.111
+Entropy vs Strong Collapse %: -0.212
+Entropy vs Directional Accuracy: 0.029
+Entropy vs Sharpe Ratio: 0.048
+Entropy vs Prediction Std: -0.053
+Entropy vs Composite Score: 0.274
+
+NOTABLE EXPERIMENTS
+----------------------------------------------------------------------
+Highest average entropy (most diffuse attention):
+  02b_vintage_sweep/baseline_h10_drop0.30: 2.9917
+  02b_vintage_sweep/baseline_h10_drop0.25: 2.9902
+  02b_vintage_sweep/baseline_h14_drop0.30: 2.9886
+  02b_vintage_sweep/baseline_h14_drop0.25: 2.9370
+  02b_vintage_sweep/baseline_h12_drop0.30: 2.9181
+
+Lowest average entropy (most focused attention):
+  06a_weekly_sweep/h16_enc8_d015_bs32: 1.9359
+  06a_weekly_sweep/h8_enc8_d015_bs16: 1.9482
+  06a_weekly_sweep/h16_enc8_d015_bs16: 1.9957
+  06a_weekly_sweep/h16_enc8_d030_bs32: 2.0128
+  06a_weekly_sweep/h16_enc8_d025_bs32: 2.0169
+
+Strongest entropy decrease over time:
+  02b_vintage_sweep/baseline_h12_drop0.10: -0.0537
+  02b_vintage_sweep/baseline_h12_drop0.20: -0.0190
+  02b_vintage_sweep/baseline_h12_drop0.15: -0.0177
+  02b_vintage_sweep/baseline_h12_drop0.25: -0.0117
+  02b_vintage_sweep/baseline_h12_drop0.30: -0.0060
+

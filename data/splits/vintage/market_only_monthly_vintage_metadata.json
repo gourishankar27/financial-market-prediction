@@ -1,0 +1,31 @@
+{
+  "created_at": "2025-11-28T22:22:18.376556",
+  "feature_set": "market_only",
+  "frequency": "monthly",
+  "data_version": "vintage",
+  "train_pct": 0.7,
+  "val_pct": 0.15,
+  "test_pct": 0.15000000000000005,
+  "train_size": 207,
+  "val_size": 45,
+  "test_size": 45,
+  "train_dates": {
+    "start": "2001-02-28 00:00:00",
+    "end": "2018-04-30 00:00:00"
+  },
+  "val_dates": {
+    "start": "2018-05-31 00:00:00",
+    "end": "2022-01-31 00:00:00"
+  },
+  "test_dates": {
+    "start": "2022-02-28 00:00:00",
+    "end": "2025-10-31 00:00:00"
+  },
+  "features": [
+    "SP500_Returns",
+    "VIX",
+    "Treasury_10Y",
+    "Yield_Spread",
+    "SP500_Volatility"
+  ]
+}

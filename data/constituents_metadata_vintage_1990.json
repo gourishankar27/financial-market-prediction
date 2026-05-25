@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-11-29T17:54:17.234147",
+  "parameters": {
+    "start_date": "1990-01-01",
+    "end_date": "2025-10-06",
+    "top_n": 50,
+    "min_coverage": 0.95,
+    "version": "vintage"
+  },
+  "results": {
+    "tickers_requested": 50,
+    "tickers_passed": 32,
+    "tickers_failed": 18,
+    "observations": 9006,
+    "date_range": {
+      "start": "1990-01-03 00:00:00",
+      "end": "2025-10-06 00:00:00"
+    }
+  },
+  "tickers": {
+    "passed": [
+      "CSCO",
+      "ADBE",
+      "CVX",
+      "JNJ",
+      "HD",
+      "XOM",
+      "UNH",
+      "JPM",
+      "WMT",
+      "COST",
+      "ORCL",
+      "AAPL",
+      "COP",
+      "VZ",
+      "NKE",
+      "LLY",
+      "NEE",
+      "MCD",
+      "CMCSA",
+      "PEP",
+      "PG",
+      "DHR",
+      "ABT",
+      "TMO",
+      "MRK",
+      "BAC",
+      "WFC",
+      "MSFT",
+      "DIS",
+      "TXN",
+      "AMD",
+      "KO"
+    ],
+    "failed": [
+      "META",
+      "AVGO",
+      "ABBV",
+      "PM",
+      "BRK-B",
+      "NFLX",
+      "CRM",
+      "GOOG",
+      "LIN",
+      "V",
+      "GOOGL",
+      "NVDA",
+      "AMZN",
+      "ACN",
+      "INTU",
+      "QCOM",
+      "TSLA",
+      "MA"
+    ]
+  }
+}

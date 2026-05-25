@@ -1,0 +1,112 @@
+======================================================================
+ATTENTION PATTERN ANALYSIS REPORT
+======================================================================
+
+SUMMARY STATISTICS
+----------------------------------------------------------------------
+Total experiments analyzed: 150
+Period types: {'yearly': 150}
+
+Entropy statistics:
+  Mean: 2.8718
+  Std:  0.2735
+  Min:  2.1927
+  Max:  4.0077
+
+Concentration statistics:
+  Mean: 0.0533
+  Std:  0.0158
+
+ATTENTION SHIFT DETECTION (MULTI-SIGNAL)
+----------------------------------------------------------------------
+Shift Detection Signals:
+  - Cosine similarity < 0.960 (direction change)
+  - L2 distance > 0.025 (magnitude change)
+  - Entropy change > ±0.050 (focus change)
+  - Top timestep shift > 5 positions (strategy change)
+
+Experiments with detected shifts: 148
+Total shifts detected: 538
+
+Signal Firing Statistics:
+  Cosine: 35 (6.5%)
+  L2: 264 (49.1%)
+  Entropy: 486 (90.3%)
+  Top Timestep: 38 (7.1%)
+
+High-confidence shifts (2+ signals): 240
+Very strong shifts (3+ signals): 43
+
+Most common shift transitions:
+  2022 → 2023: 145 experiments (primary: l2, entropy)
+  2021 → 2022: 135 experiments (primary: l2, entropy)
+  2024 → 2025: 128 experiments (primary: entropy)
+  2020 → 2021: 82 experiments (primary: entropy)
+  2023 → 2024: 48 experiments (primary: entropy)
+
+Notable Shifts (3+ signals fired):
+  00_baseline_exploration/sweep_combo3 (2020→2021): cosine, l2, entropy, top_timestep(Δ31)
+  00_baseline_exploration/exp004_attn1 (2022→2023): cosine, l2, entropy, top_timestep(Δ19)
+  02b_vintage_sweep/baseline_h20_drop0.30 (2022→2023): cosine, l2, entropy
+  00_baseline_exploration/sweep_dropout_0.2 (2021→2022): cosine, l2, entropy
+  00_baseline_exploration/sweep_hidden_64 (2021→2022): cosine, l2, entropy
+  00_baseline_exploration/sweep2_hidden_12 (2020→2021): cosine, l2, entropy
+  00_baseline_exploration/sweep2_hidden_12 (2022→2023): cosine, l2, entropy
+  00_baseline_exploration/sweep2_hidden_18 (2021→2022): cosine, l2, entropy
+  00_baseline_exploration/sweep2_hidden_18 (2022→2023): cosine, l2, entropy
+  00_baseline_exploration/exp004_attn1 (2020→2021): l2, entropy, top_timestep(Δ19)
+  00_baseline_exploration/sweep2_hidden_8 (2023→2024): l2, entropy, top_timestep(Δ15)
+  00_baseline_exploration/sweep_dropout_0.2 (2022→2023): cosine, l2, entropy
+  00_baseline_exploration/sweep2_hidden_20 (2022→2023): cosine, l2, entropy
+  00_baseline_exploration/sweep2_h16_drop_0.05 (2021→2022): cosine, l2, entropy
+  00_baseline_exploration/sweep2_h16_drop_0.05 (2022→2023): cosine, l2, entropy
+
+Experiments with most shifts:
+  00_baseline_exploration/sweep_baseline: 5 shifts
+  02b_vintage_sweep/baseline_h20_drop0.25: 5 shifts
+  00_baseline_exploration/sweep2_combo2: 5 shifts
+  00_baseline_exploration/sweep_encoder_40: 5 shifts
+  00_baseline_exploration/sweep_encoder_20: 5 shifts
+  02b_vintage_sweep/baseline_h18_drop0.25: 5 shifts
+  02b_vintage_sweep/baseline_h20_drop0.20: 5 shifts
+  00_baseline_exploration/exp005_attn4: 5 shifts
+  00_baseline_exploration/sweep_hidden_24: 5 shifts
+  02b_vintage_sweep/baseline_h20_drop0.10: 5 shifts
+
+ATTENTION-COLLAPSE CORRELATIONS
+----------------------------------------------------------------------
+Entropy vs Has Any Collapse: 0.115
+Entropy vs Has Strong Collapse: -0.027
+Entropy vs Has Degradation: 0.043
+Entropy vs Problematic %: 0.011
+Entropy vs Healthy %: -0.011
+Entropy vs Weak Collapse %: -0.026
+Entropy vs Strong Collapse %: -0.042
+Entropy vs Directional Accuracy: -0.049
+Entropy vs Sharpe Ratio: -0.029
+Entropy vs Prediction Std: -0.113
+Entropy vs Composite Score: -0.036
+
+NOTABLE EXPERIMENTS
+----------------------------------------------------------------------
+Highest average entropy (most diffuse attention):
+  00_baseline_exploration/sweep2_h16_enc_60: 4.0077
+  00_baseline_exploration/sweep_combo1: 3.8790
+  00_baseline_exploration/sweep_encoder_60: 3.8745
+  00_baseline_exploration/sweep2_h16_enc_50: 3.7823
+  00_baseline_exploration/sweep_combo3: 3.7587
+
+Lowest average entropy (most focused attention):
+  00_baseline_exploration/sweep_encoder_10: 2.1927
+  00_baseline_exploration/sweep_hidden_48: 2.2391
+  00_baseline_exploration/exp003_large: 2.3241
+  02b_vintage_sweep/baseline_h20_drop0.25: 2.3586
+  00_baseline_exploration/sweep_lr_0.001: 2.3735
+
+Strongest entropy decrease over time:
+  00_baseline_exploration/sweep2_hidden_12: -0.0770
+  02b_vintage_sweep/baseline_h12_drop0.10: -0.0537
+  00_baseline_exploration/exp003_large: -0.0479
+  00_baseline_exploration/sweep_combo2: -0.0220
+  00_baseline_exploration/sweep2_hidden_8: -0.0196
+

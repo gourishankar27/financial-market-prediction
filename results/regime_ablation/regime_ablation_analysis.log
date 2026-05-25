@@ -1,0 +1,345 @@
+
+======================================================================
+ LOADING DATA
+======================================================================
+Total evaluated experiments: 48
+Regime experiments: 48
+
+======================================================================
+ EXPERIMENT OVERVIEW
+======================================================================
+
+By routing_strategy:
+vix_threshold    24
+learned          24
+
+By num_regimes:
+2    28
+3    20
+
+By expert_type:
+mlp_16    24
+linear    24
+
+By hard_routing_train:
+False    36
+True     12
+
+======================================================================
+ TOP PERFORMERS
+======================================================================
+
+--- By Directional Accuracy ---
+
+Top 10 experiments by directional_accuracy:
+     experiment_name routing_label expert_type  directional_accuracy  healthy_pct  pred_std  sharpe_ratio
+learn2r_d025_lb2_mlp    learned_2r      mlp_16              0.537441     2.340094  0.021652      0.838029
+learn3r_d025_lb0_mlp    learned_3r      mlp_16              0.537441     2.340094  0.023167      0.838029
+    learn3r_d010_lb2    learned_3r      linear              0.537441     2.340094  0.050927      0.838029
+    learn3r_d010_lb1    learned_3r      linear              0.537441     2.340094  0.048300      0.838029
+    learn2r_d025_lb1    learned_2r      linear              0.537441     2.340094  0.048789      0.838029
+learn3r_d025_lb2_mlp    learned_3r      mlp_16              0.537441     2.340094  0.024424      0.838029
+learn2r_d025_lb0_mlp    learned_2r      mlp_16              0.537441     2.340094  0.024186      0.838029
+    learn2r_d025_lb2    learned_2r      linear              0.537441     2.340094  0.052897      0.838029
+    learn3r_d025_lb0    learned_3r      linear              0.537441     2.340094  0.036057      0.838029
+learn3r_d025_lb1_mlp    learned_3r      mlp_16              0.537441     2.340094  0.028342      0.838029
+
+--- By Healthy Percentage ---
+
+Top 10 experiments by healthy_pct:
+         experiment_name routing_label expert_type  healthy_pct  pred_std  sharpe_ratio
+vix3r_d010_t14_23_mlp_hr vix_3r_t25_hr      mlp_16    64.196568  0.451996      0.470650
+   vix3r_d010_t14_23_mlp    vix_3r_t25      mlp_16    64.196568  0.451996      0.470650
+vix3r_d025_t14_23_mlp_hr vix_3r_t25_hr      mlp_16    62.948518  0.475525      0.453724
+   vix3r_d025_t14_23_mlp    vix_3r_t25      mlp_16    62.948518  0.475525      0.453724
+      vix2r_d010_t20_mlp    vix_2r_t20      mlp_16    61.622465  0.520339      0.606296
+   vix2r_d010_t20_mlp_hr vix_2r_t20_hr      mlp_16    61.622465  0.520339      0.606296
+    vix3r_d010_t14_23_hr vix_3r_t25_hr      linear    59.516381  0.352145      0.448211
+       vix3r_d010_t14_23    vix_3r_t25      linear    59.516381  0.352145      0.448211
+       vix2r_d025_t20_hr vix_2r_t20_hr      linear    58.190328  0.403698      0.590237
+          vix2r_d025_t20    vix_2r_t20      linear    58.190328  0.403698      0.590237
+
+--- By Prediction Std (non-collapsed) ---
+
+Top 10 experiments by pred_std:
+         experiment_name routing_label expert_type  pred_std  healthy_pct  sharpe_ratio
+      vix2r_d010_t20_mlp    vix_2r_t20      mlp_16  0.520339    61.622465      0.606296
+   vix2r_d010_t20_mlp_hr vix_2r_t20_hr      mlp_16  0.520339    61.622465      0.606296
+vix3r_d025_t14_23_mlp_hr vix_3r_t25_hr      mlp_16  0.475525    62.948518      0.453724
+   vix3r_d025_t14_23_mlp    vix_3r_t25      mlp_16  0.475525    62.948518      0.453724
+vix3r_d010_t14_23_mlp_hr vix_3r_t25_hr      mlp_16  0.451996    64.196568      0.470650
+   vix3r_d010_t14_23_mlp    vix_3r_t25      mlp_16  0.451996    64.196568      0.470650
+       vix2r_d010_t20_hr vix_2r_t20_hr      linear  0.448408    58.112324      0.621905
+          vix2r_d010_t20    vix_2r_t20      linear  0.448408    58.112324      0.621905
+   vix2r_d025_t20_mlp_hr vix_2r_t20_hr      mlp_16  0.437964    54.524181      0.557413
+      vix2r_d025_t20_mlp    vix_2r_t20      mlp_16  0.437964    54.524181      0.557413
+
+======================================================================
+ ABLATION: ROUTING STRATEGY
+======================================================================
+
+============================================================
+Ablation: routing_strategy
+============================================================
+
+routing_strategy = learned (n=24)
+  directional_accuracy: 0.5366 +/- 0.0024
+  healthy_pct: 4.4494 +/- 5.9367
+  pred_std: 0.0384 +/- 0.0177
+
+routing_strategy = vix_threshold (n=24)
+  directional_accuracy: 0.4902 +/- 0.0174
+  healthy_pct: 49.4670 +/- 14.1833
+  pred_std: 0.3392 +/- 0.1378
+  -> Saved: results/regime_ablation/ablation_routing_strategy.png
+
+======================================================================
+ ABLATION: NUMBER OF REGIMES
+======================================================================
+
+============================================================
+Ablation: num_regimes
+============================================================
+
+num_regimes = 2.0 (n=28.0)
+  directional_accuracy: 0.5134 +/- 0.0243
+  healthy_pct: 27.6911 +/- 22.8106
+  pred_std: 0.1951 +/- 0.1774
+
+num_regimes = 3.0 (n=20.0)
+  directional_accuracy: 0.5134 +/- 0.0298
+  healthy_pct: 25.9321 +/- 28.7197
+  pred_std: 0.1801 +/- 0.1888
+  -> Saved: results/regime_ablation/ablation_num_regimes.png
+
+======================================================================
+ ABLATION: EXPERT ARCHITECTURE
+======================================================================
+
+============================================================
+Ablation: expert_type
+============================================================
+
+expert_type = linear (n=24)
+  directional_accuracy: 0.5127 +/- 0.0264
+  healthy_pct: 27.6359 +/- 23.9175
+  pred_std: 0.1777 +/- 0.1539
+
+expert_type = mlp_16 (n=24)
+  directional_accuracy: 0.5140 +/- 0.0270
+  healthy_pct: 26.2806 +/- 26.8468
+  pred_std: 0.2000 +/- 0.2063
+  -> Saved: results/regime_ablation/ablation_expert_type.png
+
+======================================================================
+ ABLATION: DROPOUT
+======================================================================
+
+============================================================
+Ablation: dropout
+============================================================
+
+dropout = 0.1 (n=24.0)
+  directional_accuracy: 0.5123 +/- 0.0265
+  healthy_pct: 28.5979 +/- 25.4915
+  best_val_loss: 0.3834 +/- 0.0131
+
+dropout = 0.25 (n=24.0)
+  directional_accuracy: 0.5145 +/- 0.0269
+  healthy_pct: 25.3185 +/- 25.2651
+  best_val_loss: 0.3845 +/- 0.0144
+  -> Saved: results/regime_ablation/ablation_dropout.png
+
+======================================================================
+ ABLATION: HARD ROUTING (VIX strategy only)
+======================================================================
+
+============================================================
+Ablation: hard_routing_train
+Filter: {'routing_strategy': 'vix_threshold'}
+============================================================
+
+hard_routing_train = False (n=12)
+  directional_accuracy: 0.4902 +/- 0.0178
+  final_expert_weight_cosine: 0.0926 +/- 0.0347
+  pred_std: 0.3392 +/- 0.1409
+
+hard_routing_train = True (n=12)
+  directional_accuracy: 0.4902 +/- 0.0178
+  final_expert_weight_cosine: 0.0926 +/- 0.0347
+  pred_std: 0.3392 +/- 0.1409
+  -> Saved: results/regime_ablation/ablation_hard_routing.png
+
+======================================================================
+ ABLATION: LOAD BALANCE WEIGHT (Learned strategy only)
+======================================================================
+
+============================================================
+Ablation: load_balance_weight
+Filter: {'routing_strategy': 'learned'}
+============================================================
+
+load_balance_weight = 0.0 (n=8.0)
+  directional_accuracy: 0.5371 +/- 0.0008
+  healthy_pct: 3.7344 +/- 3.9437
+  pred_std: 0.0339 +/- 0.0101
+
+load_balance_weight = 1.0 (n=8.0)
+  directional_accuracy: 0.5363 +/- 0.0030
+  healthy_pct: 4.4754 +/- 6.0396
+  pred_std: 0.0412 +/- 0.0214
+
+load_balance_weight = 2.0 (n=8.0)
+  directional_accuracy: 0.5363 +/- 0.0030
+  healthy_pct: 5.1385 +/- 7.9150
+  pred_std: 0.0401 +/- 0.0209
+  -> Saved: results/regime_ablation/ablation_load_balance.png
+
+======================================================================
+ ABLATION: VIX THRESHOLD (VIX 2-regime only)
+======================================================================
+
+============================================================
+Ablation: vix_threshold
+Filter: {'routing_strategy': 'vix_threshold', 'num_regimes': 2}
+============================================================
+
+vix_threshold = 15.0 (n=8.0)
+  directional_accuracy: 0.5138 +/- 0.0053
+  healthy_pct: 30.3627 +/- 2.1947
+  pred_std: 0.1657 +/- 0.0459
+
+vix_threshold = 20.0 (n=8.0)
+  directional_accuracy: 0.4789 +/- 0.0013
+  healthy_pct: 58.1123 +/- 2.6834
+  pred_std: 0.4526 +/- 0.0454
+  -> Saved: results/regime_ablation/ablation_vix_threshold.png
+
+======================================================================
+ CORRELATION ANALYSIS
+======================================================================
+
+Config vs Outcome Correlations:
+                     directional_accuracy  sharpe_ratio  healthy_pct  pred_std  best_val_loss
+num_regimes                      0.000105     -0.160502    -0.034829 -0.041378      -0.083858
+dropout                          0.042834      0.093597    -0.065856 -0.061658       0.039749
+load_balance_weight              0.572617      0.562315    -0.579520 -0.544030       0.574628
+expert_hidden_size               0.025452      0.071871    -0.027217  0.062609       0.046172
+hard_routing_train              -0.511452     -0.482075     0.521941  0.486441      -0.521151
+vix_threshold                    0.279196      0.237857    -0.332723 -0.265968       0.310184
+  -> Saved: results/regime_ablation/correlation_matrix.png
+
+======================================================================
+ COLLAPSE ANALYSIS
+======================================================================
+
+Mode distribution across experiments (% of test days):
+  healthy_pct              : mean= 27.0%, min=  2.3%, max= 64.2%
+  degraded_pct             : mean=  5.4%, min=  0.0%, max= 19.8%
+  unidirectional_pct       : mean= 64.1%, min= 27.5%, max= 96.8%
+  weak_collapse_pct        : mean=  1.8%, min=  0.0%, max= 12.9%
+  strong_collapse_pct      : mean=  1.8%, min=  0.0%, max= 15.6%
+
+Experiments with >5% collapse days:
+  Strong collapse: 5 / 48
+  Weak collapse:   5 / 48
+  Any collapse:    10 / 48
+  Mostly healthy:  16 / 48
+
+Healthy % by routing_strategy:
+                  mean   std  count
+routing_strategy                   
+learned            4.4   5.9     24
+vix_threshold     49.5  14.2     24
+
+Healthy % by expert_type:
+             mean   std  count
+expert_type                   
+linear       27.6  23.9     24
+mlp_16       26.3  26.8     24
+
+Healthy % by num_regimes:
+             mean   std  count
+num_regimes                   
+2            27.7  22.8     28
+3            25.9  28.7     20
+
+Most healthy experiments:
+         experiment_name  healthy_pct  directional_accuracy  pred_std
+vix3r_d010_t14_23_mlp_hr    64.196568              0.478159  0.451996
+   vix3r_d010_t14_23_mlp    64.196568              0.478159  0.451996
+vix3r_d025_t14_23_mlp_hr    62.948518              0.478939  0.475525
+   vix3r_d025_t14_23_mlp    62.948518              0.478939  0.475525
+      vix2r_d010_t20_mlp    61.622465              0.478159  0.520339
+
+Least healthy experiments:
+     experiment_name  healthy_pct  directional_accuracy  pred_std
+    learn3r_d010_lb2     2.340094              0.537441  0.050927
+    learn3r_d010_lb1     2.340094              0.537441  0.048300
+    learn2r_d025_lb1     2.340094              0.537441  0.048789
+learn3r_d025_lb2_mlp     2.340094              0.537441  0.024424
+learn2r_d025_lb0_mlp     2.340094              0.537441  0.024186
+
+======================================================================
+ DIRECT COMPARISONS
+======================================================================
+
+============================================================
+Comparison: Learned 2R vs VIX 2R
+============================================================
+Learned 2R filter: {'routing_strategy': 'learned', 'num_regimes': 2} (n=12)
+VIX 2R filter: {'routing_strategy': 'vix_threshold', 'num_regimes': 2} (n=16)
+------------------------------------------------------------
+                    metric  Learned 2R_mean  Learned 2R_std  Learned 2R_n  VIX 2R_mean  VIX 2R_std  VIX 2R_n       diff
+      directional_accuracy         0.536011        0.003340            12     0.496392    0.018410        16   0.039619
+              sharpe_ratio         0.831748        0.017337            12     0.631715    0.086525        16   0.200033
+               healthy_pct         5.629225        7.764550            12    44.237520   14.524197        16 -38.608294
+                  pred_std         0.042945        0.021930            12     0.309169    0.154556        16  -0.266224
+final_expert_weight_cosine         0.254502        0.150609            12     0.097611    0.039235        16   0.156890
+     final_routing_entropy         0.955205        0.063046            12     0.000000    0.000000        16   0.955205
+
+============================================================
+Comparison: Hard Routing vs Soft Routing
+============================================================
+Hard Routing filter: {'routing_strategy': 'vix_threshold', 'hard_routing_train': True} (n=12)
+Soft Routing filter: {'routing_strategy': 'vix_threshold', 'hard_routing_train': False} (n=12)
+------------------------------------------------------------
+                    metric  Hard Routing_mean  Hard Routing_std  Hard Routing_n  Soft Routing_mean  Soft Routing_std  Soft Routing_n          diff
+      directional_accuracy           0.490185          0.017767              12           0.490185          0.017767              12  0.000000e+00
+              sharpe_ratio           0.575161          0.110135              12           0.575161          0.110135              12  0.000000e+00
+               healthy_pct          49.466979         14.502053              12          49.466979         14.502053              12  0.000000e+00
+                  pred_std           0.339240          0.140874              12           0.339240          0.140874              12 -1.480834e-08
+final_expert_weight_cosine           0.092602          0.034723              12           0.092602          0.034723              12  0.000000e+00
+     final_routing_entropy           0.000000          0.000000              12           0.000000          0.000000              12  0.000000e+00
+
+============================================================
+Comparison: Linear vs MLP-16
+============================================================
+Linear filter: {'expert_type': 'linear'} (n=24)
+MLP-16 filter: {'expert_type': 'mlp_16'} (n=24)
+------------------------------------------------------------
+                    metric  Linear_mean  Linear_std  Linear_n  MLP-16_mean  MLP-16_std  MLP-16_n      diff
+      directional_accuracy     0.512708    0.026416        24     0.514041    0.027045        24 -0.001333
+              sharpe_ratio     0.687023    0.153333        24     0.708094    0.145264        24 -0.021071
+               healthy_pct    27.635855   23.917466        24    26.280551   26.846842        24  1.355304
+                  pred_std     0.177653    0.153892        24     0.200007    0.206317        24 -0.022354
+final_expert_weight_cosine     0.231836    0.156410        24     0.110280    0.050985        24  0.121555
+     final_routing_entropy     0.480064    0.491715        24     0.476381    0.489059        24  0.003683
+
+======================================================================
+ SUMMARY
+======================================================================
+
+Total experiments analyzed: 48
+Output directory: /home/samu/dev/school/EEE598DL/final/sp500-tft-forecasting/results/regime_ablation
+Plots saved: 8
+  - ablation_dropout.png
+  - ablation_expert_type.png
+  - ablation_hard_routing.png
+  - ablation_load_balance.png
+  - ablation_num_regimes.png
+  - ablation_routing_strategy.png
+  - ablation_vix_threshold.png
+  - correlation_matrix.png
+
+Done.

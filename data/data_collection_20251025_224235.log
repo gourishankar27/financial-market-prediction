@@ -1,0 +1,224 @@
+2025-10-25 22:42:35 | INFO     | ======================================================================
+2025-10-25 22:42:35 | INFO     | FINANCIAL DATA COLLECTION PIPELINE
+2025-10-25 22:42:35 | INFO     | ======================================================================
+2025-10-25 22:42:35 | INFO     | Start date: 1990-01-01
+2025-10-25 22:42:35 | INFO     | End date: 2025-10-06
+2025-10-25 22:42:35 | INFO     | Vintage alignment: True
+2025-10-25 22:42:35 | INFO     | Output directory: data
+2025-10-25 22:42:35 | INFO     | 
+2025-10-25 22:42:35 | INFO     | ======================================================================
+2025-10-25 22:42:35 | INFO     | Collecting S&P 500 Market Data
+2025-10-25 22:42:35 | INFO     | ======================================================================
+2025-10-25 22:42:36 | INFO     | Collected 9007 days of S&P 500 data
+2025-10-25 22:42:36 | INFO     | Date range: 1990-01-02 00:00:00 to 2025-10-06 00:00:00
+2025-10-25 22:42:36 | INFO     | ======================================================================
+2025-10-25 22:42:36 | INFO     | Collecting FRED Macroeconomic Data
+2025-10-25 22:42:36 | INFO     | ======================================================================
+2025-10-25 22:42:37 | INFO     | ✓ VIX: 9330 observations
+2025-10-25 22:42:38 | INFO     | ✓ Treasury_10Y: 9331 observations
+2025-10-25 22:42:38 | INFO     | ✓ Yield_Spread: 9331 observations
+2025-10-25 22:42:39 | INFO     | ✓ CPI: 429 observations
+2025-10-25 22:42:39 | INFO     | ✓ Unemployment: 428 observations
+2025-10-25 22:42:39 | INFO     | ✓ Fed_Rate: 429 observations
+2025-10-25 22:42:39 | INFO     | ✓ Consumer_Sentiment: 429 observations
+2025-10-25 22:42:40 | INFO     | ✓ Industrial_Production: 428 observations
+2025-10-25 22:42:40 | INFO     | Successfully collected 8/8 series
+2025-10-25 22:42:40 | INFO     | ======================================================================
+2025-10-25 22:42:40 | INFO     | Collecting Yahoo Finance Data
+2025-10-25 22:42:40 | INFO     | ======================================================================
+2025-10-25 22:42:40 | INFO     | ✓ Wilshire5000 (^W5000): 9000 observations
+2025-10-25 22:42:40 | INFO     | Successfully collected 1/1 tickers
+2025-10-25 22:42:40 | INFO     | ======================================================================
+2025-10-25 22:42:40 | INFO     | Aligning and combining data
+2025-10-25 22:42:40 | INFO     | ======================================================================
+2025-10-25 22:42:40 | INFO     | Combined dataset shape: (9007, 12)
+2025-10-25 22:42:40 | INFO     | Columns: ['SP500_Close', 'SP500_Volume', 'SP500_Returns', 'VIX', 'Treasury_10Y', 'Yield_Spread', 'CPI', 'Unemployment', 'Fed_Rate', 'Consumer_Sentiment', 'Industrial_Production', 'Wilshire5000']
+2025-10-25 22:42:40 | INFO     | ======================================================================
+2025-10-25 22:42:40 | INFO     | Preprocessing data
+2025-10-25 22:42:40 | INFO     | ======================================================================
+2025-10-25 22:42:40 | INFO     | ----------------------------------------------------------------------
+2025-10-25 22:42:40 | INFO     | Data Quality Check
+2025-10-25 22:42:40 | INFO     | ----------------------------------------------------------------------
+2025-10-25 22:42:40 | INFO     | Total missing values: 150
+2025-10-25 22:42:40 | INFO     | Missing by column:
+2025-10-25 22:42:40 | INFO     |   SP500_Returns: 1 (0.0%)
+2025-10-25 22:42:40 | INFO     |   VIX: 3 (0.0%)
+2025-10-25 22:42:40 | INFO     |   Treasury_10Y: 73 (0.8%)
+2025-10-25 22:42:40 | INFO     |   Yield_Spread: 73 (0.8%)
+2025-10-25 22:42:40 | INFO     | Extreme daily returns (>10%): 3
+2025-10-25 22:42:40 | INFO     | Dates with extreme returns:
+2025-10-25 22:42:40 | INFO     |   2008-10-13: 11.58%
+2025-10-25 22:42:40 | INFO     |   2008-10-28: 10.79%
+2025-10-25 22:42:40 | INFO     |   2020-03-16: -11.98%
+2025-10-25 22:42:40 | INFO     | Data types:
+2025-10-25 22:42:40 | INFO     |   SP500_Close: float64
+2025-10-25 22:42:40 | INFO     |   SP500_Volume: int64
+2025-10-25 22:42:40 | INFO     |   SP500_Returns: float64
+2025-10-25 22:42:40 | INFO     |   VIX: float64
+2025-10-25 22:42:40 | INFO     |   Treasury_10Y: float64
+2025-10-25 22:42:40 | INFO     |   Yield_Spread: float64
+2025-10-25 22:42:40 | INFO     |   CPI: float64
+2025-10-25 22:42:40 | INFO     |   Unemployment: float64
+2025-10-25 22:42:40 | INFO     |   Fed_Rate: float64
+2025-10-25 22:42:40 | INFO     |   Consumer_Sentiment: float64
+2025-10-25 22:42:40 | INFO     |   Industrial_Production: float64
+2025-10-25 22:42:40 | INFO     |   Wilshire5000: float64
+2025-10-25 22:42:40 | INFO     | ----------------------------------------------------------------------
+2025-10-25 22:42:40 | INFO     | Forward-filling macro variables
+2025-10-25 22:42:40 | INFO     | ----------------------------------------------------------------------
+2025-10-25 22:42:40 | INFO     | ✓ All macro variables forward-filled successfully
+2025-10-25 22:42:40 | INFO     | ----------------------------------------------------------------------
+2025-10-25 22:42:40 | INFO     | Applying ALFRED vintage date alignment
+2025-10-25 22:42:40 | INFO     | ----------------------------------------------------------------------
+2025-10-25 22:42:40 | INFO     | Processing CPI (CPIAUCSL)...
+2025-10-25 22:42:46 | INFO     |   ✓ Aligned CPI (9007/9007 all from vintage)
+2025-10-25 22:42:46 | INFO     | Processing Unemployment (UNRATE)...
+2025-10-25 22:42:52 | INFO     |   ✓ Aligned Unemployment (9007/9007 all from vintage)
+2025-10-25 22:42:52 | INFO     | Processing Industrial_Production (INDPRO)...
+2025-10-25 22:43:12 | INFO     |   ✓ Aligned Industrial_Production (9007/9007 all from vintage)
+2025-10-25 22:43:12 | INFO     | Processing Fed_Rate (FEDFUNDS)...
+2025-10-25 22:43:16 | INFO     |   ✓ Aligned Fed_Rate: 7256 vintage, 1751 forward-filled, 0 missing
+2025-10-25 22:43:16 | INFO     |     First valid date: 1990-01-02
+2025-10-25 22:43:16 | INFO     | Processing Consumer_Sentiment (UMCSENT)...
+2025-10-25 22:43:20 | INFO     |   ✓ Aligned Consumer_Sentiment: 6838 vintage, 2169 forward-filled, 0 missing
+2025-10-25 22:43:20 | INFO     |     First valid date: 1990-01-02
+2025-10-25 22:43:20 | INFO     | 
+2025-10-25 22:43:20 | INFO     | VINTAGE ALIGNMENT SUMMARY:
+2025-10-25 22:43:20 | INFO     | ----------------------------------------------------------------------
+2025-10-25 22:43:20 | INFO     |   CPI:
+2025-10-25 22:43:20 | INFO     |     - Vintage dates: 9,007 (100.0%)
+2025-10-25 22:43:20 | INFO     |   Unemployment:
+2025-10-25 22:43:20 | INFO     |     - Vintage dates: 9,007 (100.0%)
+2025-10-25 22:43:20 | INFO     |   Industrial_Production:
+2025-10-25 22:43:20 | INFO     |     - Vintage dates: 9,007 (100.0%)
+2025-10-25 22:43:20 | INFO     |   Fed_Rate:
+2025-10-25 22:43:20 | INFO     |     - Vintage dates: 7,256 (80.6%)
+2025-10-25 22:43:20 | INFO     |     - Forward-filled: 1,751 (19.4%)
+2025-10-25 22:43:20 | INFO     |   Consumer_Sentiment:
+2025-10-25 22:43:20 | INFO     |     - Vintage dates: 6,838 (75.9%)
+2025-10-25 22:43:20 | INFO     |     - Forward-filled: 2,169 (24.1%)
+2025-10-25 22:43:20 | INFO     | ✓ Final dataset shape: (8930, 14)
+2025-10-25 22:43:20 | INFO     | ✓ Date range: 1990-01-03 00:00:00 to 2025-10-06 00:00:00
+2025-10-25 22:43:20 | INFO     | ======================================================================
+2025-10-25 22:43:20 | INFO     | FINAL DATA SUMMARY - financial_dataset_daily.csv
+2025-10-25 22:43:20 | INFO     | ======================================================================
+2025-10-25 22:43:20 | INFO     | Shape: (8930, 14)
+2025-10-25 22:43:20 | INFO     | Date range: 1990-01-03 00:00:00 to 2025-10-06 00:00:00
+2025-10-25 22:43:20 | INFO     | Years covered: 35.8
+2025-10-25 22:43:20 | INFO     | Columns: ['SP500_Close', 'SP500_Volume', 'SP500_Returns', 'VIX', 'Treasury_10Y', 'Yield_Spread', 'CPI', 'Unemployment', 'Fed_Rate', 'Consumer_Sentiment', 'Industrial_Production', 'Wilshire5000', 'Inflation_YoY', 'SP500_Volatility']
+2025-10-25 22:43:20 | INFO     | Memory usage: 1046.5 KB
+2025-10-25 22:43:20 | INFO     | Target variable (SP500_Returns) statistics:
+2025-10-25 22:43:20 | INFO     |   Mean: 0.0372%
+2025-10-25 22:43:20 | INFO     |   Std: 1.1344%
+2025-10-25 22:43:20 | INFO     |   Min: -11.9841%
+2025-10-25 22:43:20 | INFO     |   Max: 10.7890%
+2025-10-25 22:43:20 | INFO     |   Skewness: -0.2651
+2025-10-25 22:43:20 | INFO     |   Kurtosis: 9.8267
+2025-10-25 22:43:20 | INFO     | Missing values: 271
+2025-10-25 22:43:20 | WARNING  | Missing values by column:
+2025-10-25 22:43:20 | WARNING  |   Inflation_YoY: 252
+2025-10-25 22:43:20 | WARNING  |   SP500_Volatility: 19
+2025-10-25 22:43:20 | INFO     | Saved dataset to 'data/financial_dataset_daily.csv'
+2025-10-25 22:43:20 | INFO     | ----------------------------------------------------------------------
+2025-10-25 22:43:20 | INFO     | Resampling to M frequency
+2025-10-25 22:43:20 | INFO     | ----------------------------------------------------------------------
+2025-10-25 22:43:20 | INFO     | ✓ Resampled shape: (430, 14)
+2025-10-25 22:43:20 | INFO     | ✓ Date range: 1990-01-31 00:00:00 to 2025-10-31 00:00:00
+2025-10-25 22:43:20 | INFO     | ======================================================================
+2025-10-25 22:43:20 | INFO     | FINAL DATA SUMMARY - financial_dataset_monthly.csv
+2025-10-25 22:43:20 | INFO     | ======================================================================
+2025-10-25 22:43:20 | INFO     | Shape: (430, 14)
+2025-10-25 22:43:20 | INFO     | Date range: 1990-01-31 00:00:00 to 2025-10-31 00:00:00
+2025-10-25 22:43:20 | INFO     | Years covered: 35.7
+2025-10-25 22:43:20 | INFO     | Columns: ['SP500_Close', 'SP500_Volume', 'SP500_Returns', 'VIX', 'Treasury_10Y', 'Yield_Spread', 'CPI', 'Unemployment', 'Fed_Rate', 'Consumer_Sentiment', 'Industrial_Production', 'Wilshire5000', 'Inflation_YoY', 'SP500_Volatility']
+2025-10-25 22:43:20 | INFO     | Memory usage: 50.4 KB
+2025-10-25 22:43:20 | INFO     | Target variable (SP500_Returns) statistics:
+2025-10-25 22:43:20 | INFO     |   Mean: 0.7972%
+2025-10-25 22:43:20 | INFO     |   Std: 4.2449%
+2025-10-25 22:43:20 | INFO     |   Min: -16.9425%
+2025-10-25 22:43:20 | INFO     |   Max: 12.6844%
+2025-10-25 22:43:20 | INFO     |   Skewness: -0.5561
+2025-10-25 22:43:20 | INFO     |   Kurtosis: 1.0489
+2025-10-25 22:43:20 | INFO     | Missing values: 13
+2025-10-25 22:43:20 | WARNING  | Missing values by column:
+2025-10-25 22:43:20 | WARNING  |   SP500_Returns: 1
+2025-10-25 22:43:20 | WARNING  |   Inflation_YoY: 12
+2025-10-25 22:43:20 | INFO     | Saved dataset to 'data/financial_dataset_monthly.csv'
+2025-10-25 22:43:20 | INFO     | ======================================================================
+2025-10-25 22:43:20 | INFO     | Creating Enhanced Dataset
+2025-10-25 22:43:20 | INFO     | ======================================================================
+2025-10-25 22:43:20 | INFO     | Creating core technical features...
+2025-10-25 22:43:20 | INFO     |    ✓ VIX features (6 features)
+2025-10-25 22:43:20 | INFO     |    ✓ Rolling volatility features (3 features)
+2025-10-25 22:43:20 | INFO     |    ✓ Moving average features (8 features)
+2025-10-25 22:43:20 | INFO     |    ✓ RSI features (3 features)
+2025-10-25 22:43:20 | INFO     |    ✓ Momentum features (6 features)
+2025-10-25 22:43:20 | INFO     |    ⚠ Time features DISABLED (calendar anomalies likely spurious)
+2025-10-25 22:43:20 | INFO     |    ✓ Yield curve features (3 features)
+2025-10-25 22:43:20 | INFO     |    ✓ Treasury features (3 features)
+2025-10-25 22:43:20 | INFO     |    ✓ CPI features (2 features)
+2025-10-25 22:43:20 | INFO     |    ✓ Unemployment features (2 features)
+2025-10-25 22:43:20 | INFO     |    ✓ Cross-asset correlation (1 feature)
+2025-10-25 22:43:20 | INFO     | Total technical features created: 37
+2025-10-25 22:43:20 | INFO     | Adding optimized gold features (quality over quantity)...
+2025-10-25 22:43:20 | INFO     | Collecting gold price data (optimized approach)...
+2025-10-25 22:43:20 | INFO     |    Attempting gold futures (GC=F)...
+2025-10-25 22:43:21 | INFO     |    ✓ Gold futures data: 6299 observations
+2025-10-25 22:43:21 | INFO     |      SOURCE USED: GC=F (Gold Futures)
+2025-10-25 22:43:21 | INFO     |    ✓ Basic gold price and returns
+2025-10-25 22:43:21 | INFO     |    ✓ Gold/SPX ratio (lagged)
+2025-10-25 22:43:21 | INFO     |    ✓ Gold vs real interest rates (monetary policy signal)
+2025-10-25 22:43:21 | INFO     |    ✓ Gold momentum (10-day, different from stock momentum)
+2025-10-25 22:43:21 | INFO     |    ✓ Gold volatility regime (lagged)
+2025-10-25 22:43:21 | INFO     |    ✓ Gold trend (lagged)
+2025-10-25 22:43:21 | INFO     |    ✓ Gold safe haven activation (crisis behavior)
+2025-10-25 22:43:21 | INFO     |    ✓ Gold 5-day lag (momentum persistence)
+2025-10-25 22:43:21 | INFO     |    Total optimized gold features: 13
+2025-10-25 22:43:21 | INFO     |    Gold data source: GC=F (Gold Futures)
+2025-10-25 22:43:21 | INFO     | 
+2025-10-25 22:43:21 | INFO     | ======================================================================
+2025-10-25 22:43:21 | INFO     | Enhanced Dataset Summary
+2025-10-25 22:43:21 | INFO     | ======================================================================
+2025-10-25 22:43:21 | INFO     | Original features: 14
+2025-10-25 22:43:21 | INFO     | Technical features added: 37
+2025-10-25 22:43:21 | INFO     | Gold features added: 13
+2025-10-25 22:43:21 | INFO     | Total features: 64
+2025-10-25 22:43:21 | INFO     | Final observations: 6206
+2025-10-25 22:43:21 | INFO     | Gold data source: GC=F (Gold Futures)
+2025-10-25 22:43:21 | INFO     | ======================================================================
+2025-10-25 22:43:21 | INFO     | FINAL DATA SUMMARY - financial_dataset_daily_enhanced.csv
+2025-10-25 22:43:21 | INFO     | ======================================================================
+2025-10-25 22:43:21 | INFO     | Shape: (6206, 64)
+2025-10-25 22:43:21 | INFO     | Date range: 2000-11-27 00:00:00 to 2025-10-06 00:00:00
+2025-10-25 22:43:21 | INFO     | Years covered: 24.9
+2025-10-25 22:43:21 | INFO     | Columns: ['SP500_Close', 'SP500_Volume', 'SP500_Returns', 'VIX', 'Treasury_10Y', 'Yield_Spread', 'CPI', 'Unemployment', 'Fed_Rate', 'Consumer_Sentiment', 'Industrial_Production', 'Wilshire5000', 'Inflation_YoY', 'SP500_Volatility', 'VIX_lag_1', 'VIX_lag_5', 'VIX_lag_10', 'VIX_MA_10', 'VIX_relative', 'VIX_spike', 'Volatility_5d', 'Volatility_10d', 'Volatility_20d', 'MA_10', 'Price_to_MA_10', 'MA_20', 'Price_to_MA_20', 'MA_50', 'Price_to_MA_50', 'MA_10_vs_20', 'MA_20_vs_50', 'RSI', 'RSI_overbought', 'RSI_oversold', 'Momentum_5d', 'Momentum_5d_positive', 'Momentum_10d', 'Momentum_10d_positive', 'Momentum_20d', 'Momentum_20d_positive', 'Yield_Spread_MA', 'Yield_Spread_relative', 'Yield_Curve_Inversion', 'Treasury_10Y_change', 'Treasury_10Y_MA', 'Treasury_Rising', 'CPI_YoY', 'CPI_acceleration', 'Unemployment_change', 'Unemployment_Rising', 'Stock_Bond_Corr', 'Gold_Price', 'Gold_Returns', 'Gold_SPX_Ratio', 'Gold_SPX_Ratio_Norm', 'Real_Interest_Rate', 'Gold_Real_Rate_Signal', 'Gold_Momentum_10d', 'Gold_Momentum_Strength', 'Gold_Vol_Regime', 'Gold_Trend_Direction', 'Gold_Trend_Strength', 'Gold_Safe_Haven', 'Gold_Returns_lag5']
+2025-10-25 22:43:21 | INFO     | Memory usage: 3151.5 KB
+2025-10-25 22:43:21 | INFO     | Target variable (SP500_Returns) statistics:
+2025-10-25 22:43:21 | INFO     |   Mean: 0.0314%
+2025-10-25 22:43:21 | INFO     |   Std: 1.2096%
+2025-10-25 22:43:21 | INFO     |   Min: -11.9841%
+2025-10-25 22:43:21 | INFO     |   Max: 10.7890%
+2025-10-25 22:43:21 | INFO     |   Skewness: -0.2651
+2025-10-25 22:43:21 | INFO     |   Kurtosis: 10.0631
+2025-10-25 22:43:21 | INFO     | Missing values: 0
+2025-10-25 22:43:21 | INFO     | Saved dataset to 'data/financial_dataset_daily_enhanced.csv'
+2025-10-25 22:43:21 | INFO     | Saved metadata to 'data/metadata_20251025_224321.json'
+2025-10-25 22:43:21 | INFO     | 
+2025-10-25 22:43:21 | INFO     | ======================================================================
+2025-10-25 22:43:21 | INFO     | DATA COLLECTION COMPLETE
+2025-10-25 22:43:21 | INFO     | ======================================================================
+2025-10-25 22:43:21 | INFO     | Generated files:
+2025-10-25 22:43:21 | INFO     |   Baseline datasets:
+2025-10-25 22:43:21 | INFO     |     - data/financial_dataset_daily.csv
+2025-10-25 22:43:21 | INFO     |     - data/financial_dataset_monthly.csv
+2025-10-25 22:43:21 | INFO     |   Enhanced dataset:
+2025-10-25 22:43:21 | INFO     |     - data/financial_dataset_daily_enhanced.csv
+2025-10-25 22:43:21 | INFO     |   Metadata:
+2025-10-25 22:43:21 | INFO     |     - data/metadata_20251025_224321.json
+2025-10-25 22:43:21 | INFO     | 
+2025-10-25 22:43:21 | INFO     | Dataset breakdown:
+2025-10-25 22:43:21 | INFO     |   Baseline: 14 features
+2025-10-25 22:43:21 | INFO     |   Enhanced: 64 features
+2025-10-25 22:43:21 | INFO     |     - Technical indicators: 37
+2025-10-25 22:43:21 | INFO     |     - Gold features: 13
+2025-10-25 22:43:21 | INFO     | 

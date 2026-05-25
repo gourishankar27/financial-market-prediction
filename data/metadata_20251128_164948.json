@@ -1,0 +1,34 @@
+{
+  "timestamp": "2025-11-28T16:49:48.831706",
+  "parameters": {
+    "start_date": "1990-01-01",
+    "end_date": "10-06-2025",
+    "use_vintage": true
+  },
+  "outputs": {
+    "daily_baseline": "financial_dataset_daily.csv",
+    "weekly_baseline": "financial_dataset_weekly.csv",
+    "monthly_baseline": "financial_dataset_monthly.csv",
+    "daily_enhanced": "financial_dataset_daily_enhanced.csv"
+  },
+  "feature_counts": {
+    "original": 14,
+    "technical": 37,
+    "gold": 13,
+    "total": 64
+  },
+  "gold_data_source": "GC=F (Gold Futures)",
+  "fred_series": {
+    "VIX": "VIXCLS",
+    "Treasury_10Y": "DGS10",
+    "Yield_Spread": "T10Y2Y",
+    "CPI": "CPIAUCSL",
+    "Unemployment": "UNRATE",
+    "Fed_Rate": "FEDFUNDS",
+    "Consumer_Sentiment": "UMCSENT",
+    "Industrial_Production": "INDPRO"
+  },
+  "yahoo_tickers": {
+    "Wilshire5000": "^W5000"
+  }
+}

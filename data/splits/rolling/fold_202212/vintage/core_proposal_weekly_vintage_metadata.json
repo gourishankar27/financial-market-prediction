@@ -1,0 +1,38 @@
+{
+  "created_at": "2025-12-03T04:27:17.440330",
+  "feature_set": "core_proposal",
+  "frequency": "weekly",
+  "data_version": "vintage",
+  "enhanced": false,
+  "split_method": "date",
+  "train_size": 1651,
+  "val_size": 13,
+  "test_size": 17,
+  "features": [
+    "SP500_Returns",
+    "VIX",
+    "Treasury_10Y",
+    "Yield_Spread",
+    "Inflation_YoY",
+    "CPI"
+  ],
+  "date_boundaries": {
+    "train_start": "1990-01-01",
+    "train_end": "2022-08-30",
+    "val_end": "2022-11-30",
+    "test_start": null,
+    "test_end": "2022-12-31"
+  },
+  "train_dates": {
+    "start": "1991-01-11 00:00:00",
+    "end": "2022-08-26 00:00:00"
+  },
+  "val_dates": {
+    "start": "2022-09-02 00:00:00",
+    "end": "2022-11-25 00:00:00"
+  },
+  "test_dates": {
+    "start": "2022-09-09 00:00:00",
+    "end": "2022-12-30 00:00:00"
+  }
+}

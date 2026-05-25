@@ -1,0 +1,55 @@
+2025-11-29 18:00:59 | INFO     | ======================================================================
+2025-11-29 18:00:59 | INFO     | S&P 500 CONSTITUENT COLLECTION
+2025-11-29 18:00:59 | INFO     | ======================================================================
+2025-11-29 18:00:59 | INFO     | Start date: 2005-01-01
+2025-11-29 18:00:59 | INFO     | End date: 2025-10-06
+2025-11-29 18:00:59 | INFO     | Top N constituents: 50
+2025-11-29 18:00:59 | INFO     | Min coverage: 95%
+2025-11-29 18:00:59 | INFO     | Output directory: data
+2025-11-29 18:00:59 | INFO     | Version: vintage
+2025-11-29 18:00:59 | INFO     | 
+2025-11-29 18:00:59 | INFO     | ======================================================================
+2025-11-29 18:00:59 | INFO     | Collecting S&P 500 Constituent Returns
+2025-11-29 18:00:59 | INFO     | ======================================================================
+2025-11-29 18:00:59 | INFO     | Tickers requested: 50
+2025-11-29 18:00:59 | INFO     | Date range: 2005-01-01 to 2025-10-06
+2025-11-29 18:00:59 | INFO     | Minimum coverage threshold: 95%
+2025-11-29 18:00:59 | INFO     | Downloading data (this may take 30-60 seconds)...
+2025-11-29 18:01:03 | INFO     | Downloaded data for 50 tickers
+2025-11-29 18:01:03 | INFO     | Date range in data: 2005-01-03 00:00:00 to 2025-10-06 00:00:00
+2025-11-29 18:01:03 | INFO     | 
+2025-11-29 18:01:03 | INFO     | Screening tickers for data coverage...
+2025-11-29 18:01:03 | INFO     | ----------------------------------------------------------------------
+2025-11-29 18:01:03 | WARNING  | PM: 84.6% coverage (EXCLUDED)
+2025-11-29 18:01:03 | WARNING  | ABBV: 61.5% coverage (EXCLUDED)
+2025-11-29 18:01:03 | WARNING  | META: 64.4% coverage (EXCLUDED)
+2025-11-29 18:01:03 | WARNING  | TSLA: 73.6% coverage (EXCLUDED)
+2025-11-29 18:01:03 | WARNING  | MA: 93.3% coverage (EXCLUDED)
+2025-11-29 18:01:03 | WARNING  | V: 84.5% coverage (EXCLUDED)
+2025-11-29 18:01:03 | WARNING  | AVGO: 77.9% coverage (EXCLUDED)
+2025-11-29 18:01:03 | INFO     | ----------------------------------------------------------------------
+2025-11-29 18:01:03 | INFO     | Screening results:
+2025-11-29 18:01:03 | INFO     |   Passed: 43 tickers
+2025-11-29 18:01:03 | INFO     |   Failed: 7 tickers
+2025-11-29 18:01:03 | INFO     |   Failed tickers: PM, ABBV, META, TSLA, MA, V, AVGO
+2025-11-29 18:01:03 | INFO     | 
+2025-11-29 18:01:03 | INFO     | Calculating daily returns...
+2025-11-29 18:01:03 | INFO     | 
+2025-11-29 18:01:03 | INFO     | ======================================================================
+2025-11-29 18:01:03 | INFO     | Constituent Returns Summary
+2025-11-29 18:01:03 | INFO     | ======================================================================
+2025-11-29 18:01:03 | INFO     | Tickers included: 43
+2025-11-29 18:01:03 | INFO     | Date range: 2005-01-04 00:00:00 to 2025-10-06 00:00:00
+2025-11-29 18:01:03 | INFO     | Observations: 5222
+2025-11-29 18:01:03 | INFO     | Cross-sectional mean daily return: 0.0634%
+2025-11-29 18:01:03 | INFO     | Cross-sectional mean daily volatility: 1.41%
+2025-11-29 18:01:03 | INFO     | Saved to: data/constituents_daily_vintage.csv
+2025-11-29 18:01:03 | INFO     | Saved metadata to: data/constituents_metadata_vintage.json
+2025-11-29 18:01:03 | INFO     | 
+2025-11-29 18:01:03 | INFO     | ======================================================================
+2025-11-29 18:01:03 | INFO     | COLLECTION COMPLETE
+2025-11-29 18:01:03 | INFO     | ======================================================================
+2025-11-29 18:01:03 | INFO     | Output: data/constituents_daily_vintage.csv
+2025-11-29 18:01:03 | INFO     | Tickers: 43/50
+2025-11-29 18:01:03 | INFO     | Observations: 5222
+2025-11-29 18:01:03 | INFO     | 

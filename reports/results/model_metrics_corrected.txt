@@ -1,0 +1,7 @@
+LSTM MODEL METRICS
+==============================
+RMSE: 1.1054
+MAE: 0.7835
+Directional_Accuracy: 53.3%
+Correlation: -0.0159
+Sharpe_Ratio: 0.9791

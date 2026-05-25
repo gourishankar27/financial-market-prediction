@@ -1,0 +1,75 @@
+======================================================================
+ATTENTION MECHANISM PHASE COMPARISON
+======================================================================
+
+Baseline:  Fixed Release
+Treatment: Vintage Release
+
+STATISTICAL COMPARISONS
+----------------------------------------------------------------------
+
+AVG ENTROPY
+  Baseline:  2.8960 ± 0.4264
+  Treatment: 2.8174 ± 0.1405
+  Difference: -0.0786 (-2.7%)
+  t-test: t=0.970, p=0.3346
+  Effect size (Cohen's d): -0.248
+  Not significant (p > 0.05)
+
+STD ENTROPY
+  Baseline:  0.1115 ± 0.0565
+  Treatment: 0.0934 ± 0.0726
+  Difference: -0.0181 (-16.3%)
+  t-test: t=1.270, p=0.2075
+  Effect size (Cohen's d): -0.279
+  Not significant (p > 0.05)
+
+AVG CONCENTRATION
+  Baseline:  0.0529 ± 0.0216
+  Treatment: 0.0597 ± 0.0172
+  Difference: +0.0068 (+12.9%)
+  t-test: t=-1.477, p=0.1433
+  Effect size (Cohen's d): 0.349
+  Not significant (p > 0.05)
+
+TEMPORAL VARIANCE
+  Baseline:  0.0000 ± 0.0001
+  Treatment: 0.0001 ± 0.0002
+  Difference: +0.0001 (+142.5%)
+  t-test: t=-2.282, p=0.0250
+  Effect size (Cohen's d): 0.464
+  *** SIGNIFICANT (SMALL effect) ***
+
+TOP TIMESTEP DIVERSITY
+  Baseline:  0.2240 ± 0.1189
+  Treatment: 0.2333 ± 0.1466
+  Difference: +0.0094 (+4.2%)
+  t-test: t=-0.318, p=0.7516
+  Effect size (Cohen's d): 0.070
+  Not significant (p > 0.05)
+
+
+ATTENTION PATTERN SIMILARITY
+----------------------------------------------------------------------
+Cosine Similarity: 0.9733
+L2 Distance: 0.0531
+Compared experiments: 42 baseline + 30 treatment
+Encoder length: 20
+→ Patterns are VERY SIMILAR (minimal architectural impact)
+
+
+TOP ATTENTION SHIFTS
+----------------------------------------------------------------------
+Timesteps with increased attention in treatment:
+  t-1: +0.0128
+  t-2: +0.0127
+  t-3: +0.0113
+  t-4: +0.0095
+  t-5: +0.0077
+
+Timesteps with decreased attention in treatment:
+  t-20: -0.0429
+  t-19: -0.0144
+  t-18: -0.0072
+  t-17: -0.0040
+  t-16: -0.0024

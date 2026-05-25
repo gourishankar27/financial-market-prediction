@@ -1,0 +1,110 @@
+======================================================================
+VSN PATTERN ANALYSIS SUMMARY
+Generated: 2025-11-29 21:54:05
+======================================================================
+
+OVERVIEW
+----------------------------------------------------------------------
+Total experiments analyzed: 24
+By phase:
+  06a_weekly_sweep: 24
+
+SHIFT DETECTION THRESHOLDS
+----------------------------------------------------------------------
+  cosine: 0.95
+  l2: 0.03
+  concentration: 0.05
+  min_signals: 1
+
+CROSS-EXPERIMENT FEATURE IMPORTANCE
+----------------------------------------------------------------------
+Rank   Feature                   Mean Wt    Std        Consistency 
+----------------------------------------------------------------------
+1      VIX                       0.4352    0.1556    0.737
+2      Yield_Spread              0.2160    0.1385    0.609
+3      Treasury_10Y              0.1527    0.1268    0.546
+4      relative_time_idx         0.1442    0.1135    0.559
+5      Inflation_YoY             0.0519    0.0424    0.551
+
+Note: Consistency = 1/(1+CV), higher = more stable across experiments/periods
+
+CONCENTRATION STATISTICS
+----------------------------------------------------------------------
+Average concentration: 0.3565 (± 0.0591)
+Range: 0.2667 - 0.5956
+
+By phase:
+  06a_weekly_sweep: 0.3565 (± 0.0591)
+
+FEATURE STABILITY
+----------------------------------------------------------------------
+Feature stability = fraction of periods where same feature was #1
+Average stability: 0.750
+
+Most stable feature selection:
+  06a_weekly_sweep/h8_enc8_d030_bs16: 1.00 (top: VIX)
+  06a_weekly_sweep/h8_enc12_d015_bs32: 1.00 (top: VIX)
+  06a_weekly_sweep/h16_enc8_d025_bs16: 1.00 (top: VIX)
+  06a_weekly_sweep/h8_enc8_d025_bs16: 1.00 (top: VIX)
+  06a_weekly_sweep/h8_enc12_d030_bs32: 1.00 (top: VIX)
+
+REGIME SHIFTS DETECTED
+----------------------------------------------------------------------
+Total shifts detected: 108
+By signal type:
+  l2: 108
+  cosine: 44
+  concentration: 37
+  top_feature: 37
+
+Shifts by period transition:
+  2020 → 2021: 24 experiments (avg 1.7 signals)
+  2021 → 2022: 24 experiments (avg 2.5 signals)
+  2022 → 2023: 23 experiments (avg 2.6 signals)
+  2024 → 2025: 22 experiments (avg 1.4 signals)
+  2023 → 2024: 15 experiments (avg 2.4 signals)
+
+Strong shifts (3+ signals):
+  06a_weekly_sweep/h16_enc8_d015_bs16: 2021→2022 [cosine,l2,concentration,top_feature]
+    Top feature: Treasury_10Y → VIX
+  06a_weekly_sweep/h16_enc8_d015_bs16: 2022→2023 [cosine,l2,concentration,top_feature]
+    Top feature: VIX → Yield_Spread
+  06a_weekly_sweep/h16_enc8_d030_bs32: 2020→2021 [cosine,l2,concentration,top_feature]
+    Top feature: VIX → Treasury_10Y
+  06a_weekly_sweep/h16_enc8_d030_bs32: 2021→2022 [cosine,l2,concentration,top_feature]
+    Top feature: Treasury_10Y → VIX
+  06a_weekly_sweep/h16_enc8_d030_bs32: 2023→2024 [cosine,l2,concentration,top_feature]
+    Top feature: VIX → Yield_Spread
+  06a_weekly_sweep/h16_enc12_d025_bs16: 2022→2023 [cosine,l2,concentration,top_feature]
+    Top feature: VIX → Yield_Spread
+  06a_weekly_sweep/h16_enc12_d030_bs32: 2021→2022 [cosine,l2,concentration,top_feature]
+    Top feature: Treasury_10Y → VIX
+  06a_weekly_sweep/h16_enc12_d025_bs32: 2021→2022 [cosine,l2,concentration,top_feature]
+    Top feature: Treasury_10Y → VIX
+  06a_weekly_sweep/h16_enc12_d015_bs32: 2021→2022 [cosine,l2,concentration,top_feature]
+    Top feature: Treasury_10Y → VIX
+  06a_weekly_sweep/h16_enc12_d015_bs32: 2023→2024 [cosine,l2,concentration,top_feature]
+    Top feature: VIX → Yield_Spread
+
+NOTABLE EXPERIMENTS
+----------------------------------------------------------------------
+Highest concentration (focused on few features):
+  06a_weekly_sweep/h16_enc8_d025_bs16: 0.5628
+  06a_weekly_sweep/h16_enc8_d030_bs16: 0.4648
+  06a_weekly_sweep/h16_enc12_d030_bs32: 0.4012
+  06a_weekly_sweep/h16_enc8_d030_bs32: 0.3942
+  06a_weekly_sweep/h16_enc8_d025_bs32: 0.3829
+
+Lowest concentration (diffuse attention):
+  06a_weekly_sweep/h8_enc8_d015_bs16: 0.2935
+  06a_weekly_sweep/h8_enc12_d015_bs16: 0.3076
+  06a_weekly_sweep/h8_enc8_d030_bs16: 0.3082
+  06a_weekly_sweep/h16_enc12_d015_bs16: 0.3118
+  06a_weekly_sweep/h8_enc8_d025_bs16: 0.3130
+
+Largest concentration increase over time:
+  06a_weekly_sweep/h16_enc8_d030_bs16: +0.0531/period
+  06a_weekly_sweep/h16_enc8_d025_bs16: +0.0207/period
+  06a_weekly_sweep/h16_enc8_d015_bs32: +0.0094/period
+  06a_weekly_sweep/h16_enc12_d030_bs32: +0.0066/period
+  06a_weekly_sweep/h16_enc12_d025_bs32: +0.0010/period
