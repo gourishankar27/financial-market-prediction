@@ -45,7 +45,7 @@ Usage:
         --experiment 00_baseline_exploration/sweep2_h16_drop_0.25 \\
         --correlate-vix --analyze-staleness
 
-Author: Sam (EEE598 Deep Learning Project)
+Author: Gourishankar (EEE598 Deep Learning Project)
 Date: November 2025
 """
 
